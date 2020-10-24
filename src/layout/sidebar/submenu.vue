@@ -9,7 +9,7 @@
         <template slot="title">
           <i :class="item.icon"></i>
           <span slot="title">
-            {{ (item.meta && item.meta.title) || "" }}
+            {{ getPageTitle(item.meta && item.meta.title) }}
           </span>
         </template>
         <template v-for="innerItem in item.children">
@@ -21,7 +21,7 @@
             <template slot="title">
               <i :class="innerItem.icon"></i>
               <span slot="title">
-                {{ (innerItem.meta && innerItem.meta.title) || "" }}
+                {{ getPageTitle(innerItem.meta && innerItem.meta.title) }}
               </span>
             </template>
             <Submenu :routes="innerItem.children" />
@@ -33,7 +33,7 @@
           >
             <el-menu-item :index="innerItem.path">
               <i :class="innerItem.icon"></i>
-              {{ (innerItem.meta && innerItem.meta.title) || "" }}
+              {{ getPageTitle(innerItem.meta && innerItem.meta.title) }}
             </el-menu-item>
           </router-link>
         </template>
@@ -41,13 +41,15 @@
       <router-link v-else :key="item.path" :to="{ path: item.path }">
         <el-menu-item :index="item.path">
           <i :class="item.icon"></i>
-          {{ (item.meta && item.meta.title) || "" }}
+          {{ getPageTitle(item.meta && item.meta.title) }}
         </el-menu-item>
       </router-link>
     </template>
   </div>
 </template>
 <script>
+import getPageTitle from "./../../utils/getPageTitle";
+
 export default {
   name: "Submenu",
   props: {
@@ -58,6 +60,9 @@ export default {
   },
   created() {
     // console.log(this.routes);
+  },
+  methods: {
+    getPageTitle
   }
 };
 </script>

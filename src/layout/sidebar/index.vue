@@ -1,15 +1,17 @@
 <template>
-  <el-menu
-    :default-active="$route.path"
-    class="el-menu-vertical-demo"
-    :class="{ isCollapse: collapse }"
-    background-color="#304156"
-    text-color="#fff"
-    active-text-color="#409EFF"
-    :collapse="collapse"
-  >
-    <Submenu :routes="permissionRoutes" />
-  </el-menu>
+  <el-scrollbar>
+    <el-menu
+      :default-active="$route.path"
+      class="el-menu-vertical-demo"
+      :class="{ isCollapse: collapse }"
+      background-color="#304156"
+      text-color="#fff"
+      active-text-color="#409EFF"
+      :collapse="collapse"
+    >
+      <Submenu :routes="permissionRoutes" />
+    </el-menu>
+  </el-scrollbar>
 </template>
 <script>
 import { mapGetters } from "vuex";

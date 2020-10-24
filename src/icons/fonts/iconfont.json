@@ -1,0 +1,58 @@
+{
+  "id": "1981462",
+  "name": "vue-study-element",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "7378041",
+      "name": "中英文切换",
+      "font_class": "zhongyingwen",
+      "unicode": "e625",
+      "unicode_decimal": 58917
+    },
+    {
+      "icon_id": "11474312",
+      "name": "pic",
+      "font_class": "pic",
+      "unicode": "e6ff",
+      "unicode_decimal": 59135
+    },
+    {
+      "icon_id": "11474331",
+      "name": "rising",
+      "font_class": "rising",
+      "unicode": "e703",
+      "unicode_decimal": 59139
+    },
+    {
+      "icon_id": "11474335",
+      "name": "QRcode",
+      "font_class": "QRcode",
+      "unicode": "e704",
+      "unicode_decimal": 59140
+    },
+    {
+      "icon_id": "11481342",
+      "name": "namecard-fill",
+      "font_class": "namecard-fill",
+      "unicode": "e72a",
+      "unicode_decimal": 59178
+    },
+    {
+      "icon_id": "11481356",
+      "name": "pic-fill",
+      "font_class": "pic-fill",
+      "unicode": "e72e",
+      "unicode_decimal": 59182
+    },
+    {
+      "icon_id": "11487970",
+      "name": "add-account",
+      "font_class": "add-account",
+      "unicode": "e741",
+      "unicode_decimal": 59201
+    }
+  ]
+}

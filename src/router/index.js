@@ -13,7 +13,8 @@ const routes = [
       {
         path: "/home",
         name: "Home",
-        meta: { title: "首页" },
+        meta: { title: "home" },
+        // meta: { title: "首页" },
         icon: "el-icon-document",
         component: () =>
           import(/* webpackChunkName: "home" */ "../views/Home.vue")
@@ -139,6 +140,49 @@ const asyncRoutes = [
         component: () =>
           import(
             /* webpackChunkName: "productDetail" */ "../views/product/Add.vue"
+          )
+      }
+    ]
+  },
+  {
+    path: "/",
+    component: Layout,
+    redirect: "/i18n",
+    children: [
+      {
+        path: "/i18n",
+        name: "I18n",
+        meta: { title: "i18n" },
+        icon: "el-icon-document",
+        component: () =>
+          import(/* webpackChunkName: "i18n" */ "../views/I18n.vue")
+      }
+    ]
+  },
+  {
+    path: "/components",
+    component: Layout,
+    meta: { title: "组件" },
+    icon: "el-icon-location",
+    children: [
+      {
+        path: "/components/sticky",
+        name: "Sticky",
+        meta: { title: "sticky" },
+        icon: "el-icon-document",
+        component: () =>
+          import(
+            /* webpackChunkName: "sticky" */ "../views/components/Sticky.vue"
+          )
+      },
+      {
+        path: "/components/backToTop",
+        name: "BackToTop",
+        meta: { title: "backToTop" },
+        icon: "el-icon-document",
+        component: () =>
+          import(
+            /* webpackChunkName: "backToTop" */ "../views/components/BackToTop.vue"
           )
       }
     ]

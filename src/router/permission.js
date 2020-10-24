@@ -1,9 +1,11 @@
 import store from "./../store";
 import router from "./index";
+import getPageTitle from "./../utils/getPageTitle";
 
 router.beforeEach((to, from, next) => {
   // console.log("to=", to);
   // console.log("from=", from);
+  document.title = getPageTitle(to.meta.title);
   const { token, role, permissionRoutes } = store.getters;
   if (token) {
     // console.log("token=", token);

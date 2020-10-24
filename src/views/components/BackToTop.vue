@@ -1,0 +1,92 @@
+<template>
+  <div>
+    <p>placeholder</p>
+    <p>placeholder</p>
+    <p>placeholder</p>
+    <p>placeholder</p>
+    <p>placeholder</p>
+    <p>placeholder</p>
+    <p>placeholder</p>
+    <p>placeholder</p>
+    <p>placeholder</p>
+    <p>placeholder</p>
+    <p>placeholder</p>
+    <p>placeholder</p>
+    <p>placeholder</p>
+    <p>placeholder</p>
+    <p>placeholder</p>
+    <p>placeholder</p>
+    <p>placeholder</p>
+    <p>placeholder</p>
+    <p>placeholder</p>
+    <p>placeholder</p>
+    <p>placeholder</p>
+    <p>placeholder</p>
+    <p>placeholder</p>
+    <p>placeholder</p>
+    <p>placeholder</p>
+    <p>placeholder</p>
+    <p>placeholder</p>
+    <p>placeholder</p>
+    <p>placeholder</p>
+    <p>placeholder</p>
+    <p>placeholder</p>
+    <p>placeholder</p>
+    <p>placeholder</p>
+    <p>placeholder</p>
+    <p>placeholder</p>
+    <p>placeholder</p>
+    <p>placeholder</p>
+    <p>placeholder</p>
+    <p>placeholder</p>
+    <p>placeholder</p>
+    <p>placeholder</p>
+    <p>placeholder</p>
+    <p>placeholder</p>
+    <p>placeholder</p>
+    <p>placeholder</p>
+    <p>placeholder</p>
+    <p>placeholder</p>
+    <p>placeholder</p>
+    <p>placeholder</p>
+    <p>placeholder</p>
+    <p>placeholder</p>
+    <p>placeholder</p>
+    <p>placeholder</p>
+    <p>placeholder</p>
+    <p>placeholder</p>
+    <p>placeholder</p>
+    <p>placeholder</p>
+    <p>placeholder</p>
+    <p>placeholder</p>
+    <p>placeholder</p>
+    <p>placeholder</p>
+    <p>placeholder</p>
+    <p>placeholder</p>
+    <p>placeholder</p>
+    <p>placeholder</p>
+    <p>placeholder</p>
+    <p>placeholder</p>
+    <p>placeholder</p>
+    <p>placeholder</p>
+    <p>placeholder</p>
+    <p>placeholder</p>
+    <p>placeholder</p>
+    <p>placeholder</p>
+    <p>placeholder</p>
+    <p>placeholder</p>
+    <p>placeholder</p>
+    <p>placeholder</p>
+    <back-to-top />
+  </div>
+</template>
+<script>
+import BackToTop from "./../../components/BackToTop";
+export default {
+  name: "BackToTopPage",
+  components: {
+    BackToTop
+  },
+  methods: {}
+};
+</script>

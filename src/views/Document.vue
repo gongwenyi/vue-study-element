@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <p>文档</p>
+    <el-button @click="num++">{{ num }}</el-button>
   </div>
 </template>
 
@@ -9,7 +10,9 @@ export default {
   name: "Document",
   components: {},
   data() {
-    return {};
+    return {
+      num: 0
+    };
   }
 };
 </script>

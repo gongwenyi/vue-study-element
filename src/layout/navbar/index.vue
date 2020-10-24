@@ -2,28 +2,35 @@
   <div class="navbar-content">
     <div class="navbar-content-left">
       <div class="toggle-collapse" @click="toggleCollapse">
-        <svg
+        <i
           :class="{ isCollapse: collapse }"
-          class="hamburger"
-          viewBox="0 0 1024 1024"
-          xmlns="http://www.w3.org/2000/svg"
-          width="22"
-          height="22"
-        >
-          <path
-            d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM142.4 642.1L298.7 519a8.84 8.84 0 0 0 0-13.9L142.4 381.9c-5.8-4.6-14.4-.5-14.4 6.9v246.3a8.9 8.9 0 0 0 14.4 7z"
-          />
-        </svg>
+          class="el-icon-s-unfold hamburger"
+        />
       </div>
       <el-breadcrumb separator="/">
         <template v-for="item in breadcrumbRoutes">
           <el-breadcrumb-item :key="item.path">
-            {{ item.meta.title }}
+            {{ getPageTitle(item.meta.title) }}
           </el-breadcrumb-item>
         </template>
       </el-breadcrumb>
     </div>
     <div class="navbar-dropdown">
+      <el-dropdown @command="handleLang">
+        <div class="navbar-lang">
+          <svg class="icon icon-zyw" aria-hidden="true">
+            <use xlink:href="#icon-zhongyingwen"></use>
+          </svg>
+        </div>
+        <el-dropdown-menu slot="dropdown">
+          <el-dropdown-item command="zh" :disabled="lang === 'zh'"
+            >中文</el-dropdown-item
+          >
+          <el-dropdown-item command="en" :disabled="lang === 'en'"
+            >English</el-dropdown-item
+          >
+        </el-dropdown-menu>
+      </el-dropdown>
       <el-dropdown @command="handleCommand">
         <div class="navbar-avatar">
           <div class="avatar">
@@ -41,6 +48,7 @@
 </template>
 <script>
 import { mapGetters } from "vuex";
+import getPageTitle from "./../../utils/getPageTitle";
 export default {
   name: "Navbar",
   data() {
@@ -49,7 +57,10 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(["collapse"])
+    ...mapGetters(["collapse"]),
+    lang() {
+      return this.$i18n.locale;
+    }
   },
   watch: {
     $route() {
@@ -68,6 +79,13 @@ export default {
     toggleCollapse() {
       this.$store.dispatch("sidebar/toggleCollapse");
     },
+    handleLang(command) {
+      if (command !== this.lang) {
+        this.lang = command;
+        localStorage.setItem("lang", command);
+        this.$i18n.locale = command;
+      }
+    },
     handleCommand(command) {
       if (command === "logout") {
         this.handleLogout();
@@ -82,7 +100,8 @@ export default {
         this.$store.commit("user/CLEAR_USERINFO");
         this.$router.push("/login");
       });
-    }
+    },
+    getPageTitle
   }
 };
 </script>
@@ -102,6 +121,8 @@ export default {
   padding: 14px 15px 10px;
 }
 .hamburger {
+  font-size: 22px;
+  color: #333333;
   transform: rotateY(180deg);
 }
 .hamburger.isCollapse {
@@ -110,9 +131,14 @@ export default {
 .navbar-dropdown {
   margin-right: 30px;
 }
+.navbar-lang {
+  padding: 0 30px;
+  cursor: pointer;
+}
 .navbar-avatar {
   display: flex;
   align-items: flex-end;
+  cursor: pointer;
   .avatar {
     width: 36px;
     height: 36px;
